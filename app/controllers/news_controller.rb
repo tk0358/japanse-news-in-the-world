@@ -1,7 +1,7 @@
 class NewsController < ApplicationController
   def index
-    @articles = Article.search
-    @article = @articles[0]
+    articles = Article.search
+    @top_articles = articles[0..5]
   end
 
   def show

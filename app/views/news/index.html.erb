@@ -1,93 +1,41 @@
 <h1>About JAPAN News IN THE WORLD</h1>
 
 <div class="row">
-  <div class="col-4">
-    <div class="card article" style="width: 24rem;">
-      <div class="card-header">
-        <h4>from <%= @article.source %></h4>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title"><%= @article.title %></h5>
-        <h6 class="card-subtitle mb-2 text-muted"><%= @article.date %></h6>
-        <p class="card-text"><%= @article.content %></p>
-        <%= link_to 'Read this', @article.url, class: "btn btn-primary" %>
-        <a href="#" class="card-link">Another link</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-4">
-    <div class="card article" style="width: 25rem;">
-      <div class="card-header">
-        <h4>in US</h4>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
+  <% @top_articles[0..2].each do |article| %>
+    <div class="col-4">
+      <div class="card article" style="width: 24rem;">
+        <div class="card-header">
+          <h4>from <%= article.source %></h4>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><%= article.title %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= article.date %></h6>
+          <p class="card-text"><%= article.content %></p>
+          <%= link_to 'Read this', article.url, class: "btn btn-primary" %>
+          <a href="#" class="card-link">Another link</a>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col-4">
-    <div class="card article" style="width: 25rem;">
-      <div class="card-header">
-        <h4>in EUROPE</h4>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
-      </div>
-    </div>
-  </div>
+  <% end %>
 </div>
 
 <div class="row">
-  <div class="col-4">
-    <div class="card article" style="width: 25rem;">
-      <div class="card-header">
-        <h4>in ASIA</h4>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-4">
-    <div class="card article" style="width: 25rem;">
-      <div class="card-header">
-        <h4>in SOUTH AMERICA</h4>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
+  <% @top_articles[3..5].each do |article| %>
+    <div class="col-4">
+      <div class="card article" style="width: 24rem;">
+        <div class="card-header">
+          <h4>from <%= article.source %></h4>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><%= article.title %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= article.date %></h6>
+          <p class="card-text"><%= article.content %></p>
+          <%= link_to 'Read this', article.url, class: "btn btn-primary" %>
+          <a href="#" class="card-link">Another link</a>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col-4">
-    <div class="card article" style="width: 25rem;">
-      <div class="card-header">
-        <h4>in AFRICA</h4>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
-      </div>
-    </div>
-  </div>
+  <% end %>
 </div>
 
 <a href="http://newsapi.org">Powered by News API</a>
