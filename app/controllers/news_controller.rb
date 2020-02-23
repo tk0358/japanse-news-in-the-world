@@ -1,6 +1,8 @@
 class NewsController < ApplicationController
   def index
-    @article = Article.search
+    @articles = Article.search
+    @article = @articles[0]
+    byebug
   end
 
   def show

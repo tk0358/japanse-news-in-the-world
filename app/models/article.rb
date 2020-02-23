@@ -1,15 +1,16 @@
 class Article < ApplicationRecord
-  require 'net/http'
-  require 'uri'
-  require 'json'
 
   def self.search
-    url = URI.parse("http://newsapi.org/v2/everything?q=japan&sortBy=popularity&apiKey=#{Rails.application.credentials.news_api[:api_key]}")
-    res = Net::HTTP.get_response(url)
-    json = JSON.parse(res.body)
-    article = json["articles"][0]
-    content = article["content"].gsub(/\[\+\d+\s\w+\]/, "")
+    newsapi = News.new("#{Rails.application.credentials.news_api[:api_key]}")
 
-    new(title: article["title"], content: content, date: article["publishedAt"])
+    all_articles = newsapi.get_everything(q: 'japan',
+                                      language: 'en',
+                                      sortBy: 'relevancy')
+    
+    articles = []
+    all_articles.each do |article|
+      articles << new(title: article.title, content: article.description, date: article.publishedAt)
+    end
+    articles
   end
 end
