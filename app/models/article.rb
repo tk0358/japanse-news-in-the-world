@@ -9,7 +9,12 @@ class Article < ApplicationRecord
     
     articles = []
     all_articles.each do |article|
-      articles << new(title: article.title, content: article.description, date: article.publishedAt, source: article.name, url: article.url)
+      articles << new(title: article.title, 
+                      content: article.description, 
+                      date: article.publishedAt, 
+                      source: article.name, 
+                      url: article.url,
+                      img: article.urlToImage)
     end
     articles
   end

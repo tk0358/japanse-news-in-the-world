@@ -8,9 +8,9 @@
           <h4>from <%= article.source %></h4>
         </div>
         <div class="card-body">
-          <img src="..." class="rounded float-right" alt="...">
           <h5 class="card-title"><%= article.title %></h5>
           <h6 class="card-subtitle mb-2 text-muted"><%= article.date %></h6>
+          <img src="<%= article.img %>" width="150" height=auto class="rounded float-right" alt="">
           <p class="card-text"><%= article.content %></p>
           <%= link_to 'Read this', article.url, class: "btn btn-primary", target: :_blank %>
           <a href="#" class="card-link">Another link</a>
@@ -30,6 +30,7 @@
         <div class="card-body">
           <h5 class="card-title"><%= article.title %></h5>
           <h6 class="card-subtitle mb-2 text-muted"><%= article.date %></h6>
+          <img src="<%= article.img %>" width="150" height=auto class="rounded float-right" alt="">
           <p class="card-text"><%= article.content %></p>
           <%= link_to 'Read this', article.url, class: "btn btn-primary" %>
           <a href="#" class="card-link">Another link</a>
