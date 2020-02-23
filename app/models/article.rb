@@ -8,7 +8,8 @@ class Article < ApplicationRecord
     res = Net::HTTP.get_response(url)
     json = JSON.parse(res.body)
     article = json["articles"][0]
+    content = article["content"].gsub(/\[\+\d+\s\w+\]/, "")
 
-    new(title: article["title"], content: article["content"], date: article["publishedAt"])
+    new(title: article["title"], content: content, date: article["publishedAt"])
   end
 end
